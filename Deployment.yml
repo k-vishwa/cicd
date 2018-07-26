@@ -5,16 +5,16 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   generation: 1
   labels:
-    app: !APPNAME!
-  name: !APPNAME!
-  namespace: !NAMESPACE!
+    app: APPNAME
+  name: APPNAME
+  namespace: NAMESPACE
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: !APPNAME!
+      app: APPNAME
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -24,15 +24,15 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: !APPNAME!
+        app: APPNAME
     spec:
       containers:
-      - image: !GCRPATH!
+      - image: GCRPATH
         imagePullPolicy: Always
         name: nexus
         ports:
-        - containerPort: !PORT!
-          name: !APPNAME!-sb
+        - containerPort: PORT
+          name: APPNAME-sb
           protocol: TCP
         resources: {}
         terminationMessagePath: /dev/termination-log

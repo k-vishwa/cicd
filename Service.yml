@@ -3,16 +3,16 @@ kind: Service
 metadata:
   creationTimestamp: 2018-07-24T13:56:07Z
   labels:
-    app: !APPNAME!
-  name: !APPNAME!
-  namespace: !NAMESPACE!
+    app: APPNAME
+  name: APPNAME
+  namespace: NAMESPACE
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - port: !PORT!
+  - port: PORT
     protocol: TCP
-    targetPort: !APPNAME!-sb
+    targetPort: APPNAME-sb
   selector:
-    app: !APPNAME!
+    app: APPNAME
   sessionAffinity: None
   type: LoadBalancer
