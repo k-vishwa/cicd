@@ -27,7 +27,7 @@ spec:
         app: APPNAME
     spec:
       containers:
-      - image: GCRPATH
+      - image: IMAGEPATH
         imagePullPolicy: Always
         name: nexus
         ports:
