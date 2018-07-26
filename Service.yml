@@ -9,7 +9,7 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - port: PORT
+  - port: 80
     protocol: TCP
     targetPort: APPNAME-sb
   selector:
