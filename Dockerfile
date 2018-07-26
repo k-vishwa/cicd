@@ -1,4 +1,5 @@
 FROM centos:7
-ADD !EXECUTABLEFILE! /app
+touch /app
+ADD code /app
 EXPOSE !PORT!
 CMD ["./app"]
