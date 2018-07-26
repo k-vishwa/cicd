@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2018-07-24T13:56:07Z
+  labels:
+    app: !APPNAME!
+  name: !APPNAME!
+  namespace: !NAMESPACE!
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: !PORT!
+    protocol: TCP
+    targetPort: !APPNAME!-sb
+  selector:
+    app: !APPNAME!
+  sessionAffinity: None
+  type: LoadBalancer
